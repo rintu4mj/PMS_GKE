@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: project-main-deployment
-          image: gcr.io/double-aleph-348710/project-main:latest
+          image: gcr.io/double-aleph-348710/project-main-api:latest
           ports:
             - containerPort: 8200
          
