@@ -25,12 +25,14 @@ spec:
             name: project-counter-service
             port:
               number: 8201
-     - path: /notifications/.*
+      - path: /notifications/.*
         pathType: Prefix
         backend:
           service:
             name: pms-notification-service
             port:
               number: 8202
+              
+              
               
       
