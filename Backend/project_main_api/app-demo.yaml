@@ -16,7 +16,7 @@ spec:
         - name: project-main-deployment
           image: gcr.io/double-aleph-348710/project-main-api:latest
           ports:
-            - containerPort: 8200
+            - containerPort: 8100
          
 
           
@@ -32,7 +32,7 @@ spec:
     app: pms-app
   ports:
     - protocol: "TCP"
-      port: 8200 # The port that the service is running on in the cluster
-      targetPort: 8200 # The port exposed by the service
-  type: LoadBalancer # type of the service.
+      port: 8100 # The port that the service is running on in the cluster
+      targetPort: 8100 # The port exposed by the service
+  type: ClusterIP # type of the service.
 
