@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: pms-app
+      app: project-notification-deployment
   replicas: 1
   template:
     metadata:
       labels:
-        app: pms-app
+        app: project-notification-deployment
     spec:
       containers:
         - name: project-notification-deployment
@@ -29,10 +29,10 @@ metadata: # Metadata of the resource kind we are creating
   name: project-notification-service
 spec:
   selector:
-    app: pms-app
+    app: project-notification-deployment
   ports:
     - protocol: "TCP"
-      port: 8102 # The port that the service is running on in the cluster
+      port: 80 # The port that the service is running on in the cluster
       targetPort: 8102 # The port exposed by the service
   type: ClusterIP # type of the service.
 
