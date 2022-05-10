@@ -10,11 +10,11 @@ class ProjectServices {
   }
 
   getTotalCompletedProjects() {
-    return axios.get("/counts/totalCompleted");
+    return axios.get("/projects/totalCompleted");
   }
 
   getTotalInProgressProjects() {
-    return axios.get("/counts/totalInProgress");
+    return axios.get("/projects/totalInProgress");
   }
 
   // deleteProject(id) {
@@ -31,12 +31,12 @@ class ProjectServices {
 
   saveProjectHistory(project) {
 
-    return axios.post("/notifications/saveProjectHistory", project);
+    return axios.post("/projects/saveProjectHistory", project);
   }
 
   getProjectHistory() {
 
-    return axios.get("/notifications/getProjectHistory");
+    return axios.get("/projects/getProjectHistory");
   }
 }
 
