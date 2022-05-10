@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import ManageProject from './Components/Project/ManageProject';
+import ProjectForm from './Components/Project/ProjectForm';
+import {
+
+  Routes,
+  Route,
+} from "react-router-dom";
+import NoPage from './Components/Project/NoPage';
+import LoginPage from './Components/LoginModule/LoginPage';
+import SignUp from './Components/LoginModule/SignUp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+
+
+    <Routes>
+
+      <Route exact path="/addProject" element={<ProjectForm />} />
+      <Route exact path="/dashboard" element={<ManageProject />} />
+      <Route exact path="/signup" element={<SignUp />} />
+      <Route
+        exact path="*"
+        element={
+          // <main style={{ padding: "1rem" }}>
+          //   <p>There's nothing here!</p>
+          // </main>
+          <LoginPage/>
+        }
+      />
+      
+
+    </Routes>
+
+
+
   );
 }
 

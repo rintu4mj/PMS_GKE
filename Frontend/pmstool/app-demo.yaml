@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pms-tool-ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pms-app
+  template:
+    metadata:
+      labels:
+        app: pms-app
+    spec:
+      containers:
+        - name: pms-tool-ui-deployment
+          image: gcr.io/double-aleph-348710/pms-tool-ui:latest
+          
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pms-tool-ui-service
+spec:
+  type: ClusterIP
+  selector:
+    app: pms-app
+  ports:
+    - name: pms-tool-ui
+      port: 3000
+      targetPort: 3000
