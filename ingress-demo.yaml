@@ -15,9 +15,16 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: pms-main-service
+            name: project-main-service
             port:
-              number: 8200
+              number: 8100
+      - path: /counts/.*
+        pathType: Prefix
+        backend:
+          service:
+            name: project-counter-service
+            port:
+              number: 8101
       - path: /.*
         pathType: Prefix
         backend:
@@ -25,20 +32,13 @@ spec:
             name: pms-tool-ui-service
             port:
               number: 3000
-      - path: /counts/.*
-        pathType: Prefix
-        backend:
-          service:
-            name: project-counter-service
-            port:
-              number: 8201
       - path: /notifications/.*
         pathType: Prefix
         backend:
           service:
-            name: pms-notification-service
+            name: project-notification-service
             port:
-              number: 8202
+              number: 8102
               
               
               
