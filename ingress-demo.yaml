@@ -2,38 +2,38 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-resource
+  namespace: default
   annotations:
-    kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.global-static-ip-name: "web-static-ip"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: "34.135.240.58.nip.io"
     http:
       paths:
-      - path: /projects/.*
+      - path: /projects/*
         pathType: Prefix
         backend:
           service:
             name: project-main-service
             port:
               number: 8100
-      - path: /counts/.*
+      - path: /counts/*
         pathType: Prefix
         backend:
           service:
             name: project-counter-service
             port:
               number: 8101
-      - path: /.*
+      - path: /*
         pathType: Prefix
         backend:
           service:
             name: pms-tool-ui-service
             port:
               number: 3000
-      - path: /notifications/.*
+      - path: /notifications/*
         pathType: Prefix
         backend:
           service:
