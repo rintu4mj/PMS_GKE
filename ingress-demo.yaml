@@ -9,7 +9,7 @@ metadata:
 
 spec:
   rules:
-  - host: "34.135.240.58.nip.io"
+  - host: "35.225.72.173.nip.io"
     http:
       paths:
       - path: /projects/.*
