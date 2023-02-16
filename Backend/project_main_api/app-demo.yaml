@@ -14,9 +14,11 @@ spec:
     spec:
       containers:
         - name: project-main-deployment
-          image: gcr.io/double-aleph-348710/project-main-api:latest
+          image: mycontainerpmsg8967.azurecr.io/project-main-api:latest
           ports:
             - containerPort: 8100
+      imagePullSecrets:
+        - name: secret
          
 
           
