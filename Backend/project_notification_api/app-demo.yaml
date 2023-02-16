@@ -14,9 +14,11 @@ spec:
     spec:
       containers:
         - name: project-notification-deployment
-          image: gcr.io/double-aleph-348710/project-notification-api:latest
+          image: mycontainerpmsg8967.azurecr.io/project-notification-api:latest
           ports:
             - containerPort: 8102
+      imagePullSecrets:
+        - name: secret
          
 
           
