@@ -15,7 +15,7 @@ spec:
       containers:
         - name: pms-tool-ui-deployment
           image: mycontainerpmsg8967.azurecr.io/pms-tool-ui:latest
-        imagePullSecrets:
+      imagePullSecrets:
         - name: secret
           
         
