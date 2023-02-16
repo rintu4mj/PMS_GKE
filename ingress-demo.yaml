@@ -9,8 +9,7 @@ metadata:
 
 spec:
   rules:
-  - host: "20.242.162.195.nip.io"
-    http:
+  - http:
       paths:
       - path: /projects/.*
         pathType: Prefix
