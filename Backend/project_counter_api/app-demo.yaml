@@ -17,10 +17,11 @@ spec:
           image: mycontainerpmsg8967.azurecr.io/pms-counter-api:latest
           ports:
             - containerPort: 8101
+        imagePullSecrets:
+        - name: mycontainerpmsg8967.azurecr.io
          
 
-          
-
+        
 ---
 
 apiVersion: v1 # Kubernetes API version
