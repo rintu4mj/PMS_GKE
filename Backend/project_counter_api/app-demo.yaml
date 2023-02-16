@@ -21,7 +21,7 @@ spec:
         - name: secret
          
 
-        
+     
 ---
 
 apiVersion: v1 # Kubernetes API version
